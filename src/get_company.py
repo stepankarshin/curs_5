@@ -1,7 +1,7 @@
 import requests
 import json
 import time
-
+''':('''
 
 def get_employers():
     req = requests.get('https://api.hh.ru/employers')
