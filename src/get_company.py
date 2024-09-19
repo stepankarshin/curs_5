@@ -1,7 +1,6 @@
 import requests
 import json
 import time
-import os
 
 
 def get_employers():
@@ -18,13 +17,13 @@ def get_employers():
         data = req.content.decode()
         req.close()
         jsObj = json.loads(data)
-        try:
-            employers.append([jsObj['id'], jsObj['name']])
+        '''try:'''
+        employers.append([jsObj['id'], jsObj['name'], jsObj['open_vacancies']])
+        i += 1
+        k += 1
+        '''except:
             i += 1
-            k += 1
-        except:
-            i += 1
-            j += 1
+            j += 1'''
         if i % 200 == 0:
             time.sleep(0.2)
     return employers
